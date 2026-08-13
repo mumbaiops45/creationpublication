@@ -1,26 +1,240 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+@theme {
+  --color-firozi-50: #ecfeff;
+  --color-firozi-100: #cffafe;
+  --color-firozi-200: #a5f3fc;
+  --color-firozi-300: #67e8f9;
+  --color-firozi-400: #22d3ee;
+  --color-firozi-500: #06b6d4;
+  --color-firozi-600: #0891b2;
+  --color-firozi-700: #0e7490;
+  --color-firozi-800: #155e75;
+  --color-firozi-900: #164e63;
+
+
+  --color-ink-900: #04121a;
+  --color-ink-800: #061a24;
+  --color-ink-700: #0a2430;
+  --color-ink-600: #0f3040;
+
+
+  --color-brass-300: #f0d9a8;
+  --color-brass-400: #e3bd75;
+  --color-brass-500: #cf9f45;
+
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+:root,
+[data-tone='dark'] {
+  --surface: var(--color-ink-900);
+  --surface-raised: color-mix(in oklab, var(--color-ink-800) 82%, transparent);
+  --surface-sunken: var(--color-ink-800);
+  --fg: #eaf6f9;
+  --fg-strong: #ffffff;
+  --fg-muted: #93a9b5;
+  --hairline: color-mix(in oklab, var(--color-firozi-400) 15%, transparent);
+  --hairline-strong: color-mix(in oklab, var(--color-firozi-400) 40%, transparent);
+  --accent: var(--color-firozi-300);
+  --accent-soft: color-mix(in oklab, var(--color-firozi-400) 12%, transparent);
+  --shadow-card: 0 18px 40px -24px rgb(0 0 0 / 0.7);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-tone='light'] {
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --surface-sunken: #f2fafb;
+  --fg: #0d2c38;
+  --fg-strong: #04121a;
+  --fg-muted: #55707d;
+  --hairline: color-mix(in oklab, var(--color-firozi-700) 15%, transparent);
+  --hairline-strong: color-mix(in oklab, var(--color-firozi-600) 45%, transparent);
+  --accent: var(--color-firozi-700);
+  --accent-soft: color-mix(in oklab, var(--color-firozi-500) 10%, transparent);
+  --shadow-card: 0 18px 40px -28px color-mix(in oklab, var(--color-firozi-900) 45%, transparent);
+}
+
+
+[data-tone='tint'] {
+  --surface: #f2fafb;
+  --surface-raised: #ffffff;
+  --surface-sunken: #e6f5f7;
+  --fg: #0d2c38;
+  --fg-strong: #04121a;
+  --fg-muted: #55707d;
+  --hairline: color-mix(in oklab, var(--color-firozi-700) 14%, transparent);
+  --hairline-strong: color-mix(in oklab, var(--color-firozi-600) 45%, transparent);
+  --accent: var(--color-firozi-700);
+  --accent-soft: color-mix(in oklab, var(--color-firozi-500) 10%, transparent);
+  --shadow-card: 0 18px 40px -28px color-mix(in oklab, var(--color-firozi-900) 40%, transparent);
+}
+
+html {
+  scroll-behavior: auto;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-ink-900);
+  color: #eaf6f9;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-firozi-400);
+  color: var(--color-ink-900);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink-900);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--color-firozi-600), var(--color-firozi-800));
+  border-radius: 999px;
+}
+
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+
+@utility container-x {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (width >= 1024px) {
+    padding-inline: 2rem;
+  }
+}
+
+
+@utility surface {
+  background-color: var(--surface);
+  color: var(--fg);
+}
+
+
+@utility card {
+  background-color: var(--surface-raised);
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow-card);
+}
+
+@utility card-sunken {
+  background-color: var(--surface-sunken);
+  border: 1px solid var(--hairline);
+}
+
+
+@utility text-fg {
+  color: var(--fg);
+}
+@utility text-strong {
+  color: var(--fg-strong);
+}
+@utility text-muted {
+  color: var(--fg-muted);
+}
+@utility text-accent {
+  color: var(--accent);
+}
+@utility border-hairline {
+  border-color: var(--hairline);
+}
+@utility bg-accent-soft {
+  background-color: var(--accent-soft);
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--fg-strong) 0%,
+    var(--color-firozi-400) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+@utility glow {
+  box-shadow:
+    0 0 0 1px var(--hairline),
+    0 20px 60px -20px color-mix(in oklab, var(--color-firozi-500) 45%, transparent);
+}
+
+
+@utility grid-bg {
+  background-image:
+    linear-gradient(var(--hairline) 1px, transparent 1px),
+    linear-gradient(90deg, var(--hairline) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+
+html.js-ready [data-reveal],
+html.js-ready [data-reveal-group] > * {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js-ready [data-reveal],
+  html.js-ready [data-reveal-group] > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
