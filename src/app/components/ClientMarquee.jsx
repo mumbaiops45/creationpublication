@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { clients } from '@/content/clients'
 
 
@@ -18,7 +17,7 @@ export default function ClientMarquee() {
             aria-hidden={index >= clients.length ? 'true' : undefined}
           >
             {client.logo ? (
-              <Image
+              <img
                 src={client.logo}
                 alt={client.name}
                 width={150}

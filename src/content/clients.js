@@ -1,17 +1,17 @@
 
 export const clients = [
-  { name: 'Tata Motors', logo: '' },
-  { name: 'Godrej', logo: '' },
-  { name: 'Bajaj Finserv', logo: '' },
-  { name: 'Reliance Retail', logo: '' },
-  { name: 'HDFC Bank', logo: '' },
-  { name: 'Asian Paints', logo: '' },
-  { name: 'Kotak Mahindra', logo: '' },
-  { name: 'Amul', logo: '' },
-  { name: 'Raymond', logo: '' },
-  { name: 'Mahindra', logo: '' },
-  { name: 'Britannia', logo: '' },
-  { name: 'Lodha Group', logo: '' },
+  { name: 'Tata Motors', logo: 'tata.png' },
+  { name: 'Godrej', logo: 'godrej.webp' },
+  { name: 'Bajaj Finserv', logo: 'bajaj-finserv.png' },
+  { name: 'Reliance Retail', logo: 'reliance-retail.png' },
+  { name: 'HDFC Bank', logo: 'hdfclogo.jpg' },
+  { name: 'Asian Paints', logo: 'asian-paints.png' },
+  { name: 'Kotak Mahindra', logo: 'Kotak_Mahindra_Bank_logo.png' },
+  { name: 'Amul', logo: 'amul.jpg' },
+  { name: 'Raymond', logo: 'Raymond.jpg' },
+  { name: 'Mahindra', logo: 'mahindra-logo.png' },
+  { name: 'Britannia', logo: 'Britannia.png' },
+  { name: 'Lodha Group', logo: 'lodha-logo.png' },
 ]
 
 export const testimonials = [

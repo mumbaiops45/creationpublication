@@ -11,7 +11,6 @@ import Testimonials from './Testimonials'
 import CTASection from './CTASection'
 import Counter from './Counter'
 import Reveal from './Reveal'
-import Figure from './Figure'
 import { ArrowIcon } from './Icons'
 
 const pillars = [
@@ -58,16 +57,6 @@ export default function Home() {
                             <ServiceCard key={service.slug} service={service} index={index} />
                         ))}
                     </Reveal>
-
-                    <Reveal className="mt-12 text-center" delay={0.15}>
-                        <Link
-                            href="/services"
-                            className="border-hairline group inline-flex items-center gap-2.5 rounded-xl border px-7 py-3.5 text-sm font-semibold text-strong transition hover:border-firozi-500/50 hover:bg-firozi-500/5"
-                        >
-                            See all services in detail
-                            <ArrowIcon className="size-4 transition-transform group-hover:translate-x-1" />
-                        </Link>
-                    </Reveal>
                 </div>
             </Section>
 
@@ -93,16 +82,6 @@ export default function Home() {
                                 <p className="mt-2.5 text-xs leading-snug font-medium text-strong">{stat.label}</p>
                             </div>
                         ))}
-                    </Reveal>
-
-                    <Reveal className="mt-12 text-center" delay={0.15}>
-                        <Link
-                            href="/statistics"
-                            className="group inline-flex items-center gap-2.5 text-sm font-semibold text-accent hover:underline"
-                        >
-                            View our full company profile
-                            <ArrowIcon className="size-4 transition-transform group-hover:translate-x-1" />
-                        </Link>
                     </Reveal>
                 </div>
             </Section>

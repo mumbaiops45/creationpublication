@@ -37,8 +37,8 @@ export default function BlogPage() {
                 href={`/blog/${featured.slug}`}
                 className="card group grid grid-cols-1 gap-0 overflow-hidden rounded-3xl transition hover:border-firozi-500/50 hover:shadow-xl lg:grid-cols-2"
               >
-                <Figure
-                  image={featured.cover}
+                <img
+                  src={featured.image}
                   alt={featured.title}
                   art={featured.art}
                   className="aspect-video w-full lg:aspect-auto lg:h-full lg:min-h-80"
@@ -66,7 +66,6 @@ export default function BlogPage() {
             </Reveal>
           )}
 
-          {/* Remaining posts */}
           <Reveal stagger={0.09} className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {rest.map((post) => (
               <Link

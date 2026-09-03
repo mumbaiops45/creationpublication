@@ -23,12 +23,16 @@ export default function Navbar() {
     const isActive = (href) => (href === '/' ? pathname === '/' : pathname.startsWith(href))
 
     return (
-        <Disclosure
+        // <Disclosure
+        //     as="header"
+        //     className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${scrolled
+        //             ? 'border-b border-firozi-400/10 bg-ink-900/85 backdrop-blur-xl'
+        //             : 'border-b border-transparent bg-transparent'
+        //         }`}
+        // >
+         <Disclosure
             as="header"
-            className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${scrolled
-                    ? 'border-b border-firozi-400/10 bg-ink-900/85 backdrop-blur-xl'
-                    : 'border-b border-transparent bg-transparent'
-                }`}
+            className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 border-b border-firozi-400/10 bg-ink-900/85 backdrop-blur-xl`}
         >
             {({ open }) => (
                 <>

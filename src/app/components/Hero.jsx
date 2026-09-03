@@ -1,7 +1,4 @@
-
-
 'use client'
-
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import gsap from 'gsap'
@@ -165,17 +162,8 @@ export default function Hero() {
       </div>
 
 
-      <div className="absolute inset-0 z-10 bg-black/20" aria-hidden="true"/>
-      <div className="absolute inset-0 z-10 bg-linear-to-r from-ink-900/60 via-ink-900/20 to-transparent" aria-hidden="true"/>
-
-      <div className="absolute inset-0 z-10 bg-linear-to-b from-transparent via-transparent to-ink-900/80" aria-hidden="true"/>
-
-      <div className="grid-bg absolute inset-0 z-10 opacity-20" aria-hidden="true"/>
-
-     
+      <div className="absolute inset-0 z-10 bg-black/15" aria-hidden="true"/>
       <div className="absolute -top-40 left-1/2 z-10 size-[42rem] -translate-x-1/2 rounded-full bg-firozi-500/12 blur-[120px]" aria-hidden="true"/>
-
-  
       <div data-hero-copy className="container-x relative z-20">
         <div className="max-w-4xl">
           <span data-hero-badge className="inline-flex items-center gap-2.5 rounded-full border border-firozi-400/25 bg-ink-800/60 px-4 py-2 text-xs font-semibold tracking-[0.14em] text-firozi-300 uppercase backdrop-blur-sm">
