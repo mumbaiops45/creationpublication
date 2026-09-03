@@ -99,7 +99,9 @@ export default function Footer() {
           <p>
             © {year} {site.name}. All rights reserved.
           </p>
-          <p>Outdoor · Transit · Retail · Print · Digital</p>
+          <a href='https://www.nakshatranamahacreations.com/' target='_blank' 
+           rel='noopener noreferrer'
+           className='text-gray-400 no-underline transition-colors duration-300 hover:text-firozi-300 hover:underline'>Developed By: Nakshatra Namaha Creations</a>
         </div>
       </div>
     </footer>

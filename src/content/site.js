@@ -12,7 +12,7 @@ export const site = {
   phone: '+91 98200 00000',
   phoneRaw: '+919820000000',
 
- 
+
   whatsapp: '919820000000',
   whatsappMessage: 'Hi Creation Publicity, I would like to enquire about your advertising services.',
 
@@ -38,11 +38,11 @@ export const site = {
 
 export const nav = [
   { name: 'Home', href: '/' },
+  { name: 'About Us', href: '/about-us' },
   { name: 'Services', href: '/services' },
   { name: 'Statistics', href: '/statistics' },
   { name: 'Clients', href: '/clients' },
   { name: 'Case Studies', href: '/blog' },
-  { name: 'About Us', href: '/about-us' },
   { name: 'Contact Us', href: '/contact' },
 ]
 
