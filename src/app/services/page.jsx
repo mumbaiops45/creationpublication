@@ -2,7 +2,6 @@ import { services } from '@/content/services'
 import PageHeader from '../components/PageHeader'
 import Section from '../components/Section'
 import ServiceCard from '../components/ServiceCard'
-import Reveal from '../components/Reveal'
 import CTASection from '../components/CTASection'
 
 export const metadata = {
@@ -23,13 +22,13 @@ export default function ServicesPage() {
         art="hoarding"
       />
 
-      <Section tone="light" className="py-20 sm:py-24">
+      <Section tone="light" className="py-20 sm:py-28">
         <div className="container-x">
-          <Reveal stagger={0.07} className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
               <ServiceCard key={service.slug} service={service} index={index} />
             ))}
-          </Reveal>
+          </div>
         </div>
       </Section>
 

@@ -5,6 +5,7 @@ import { site } from '@/content/site'
 import PageHeader from '../../components/PageHeader'
 import Section from '../../components/Section'
 import Reveal from '../../components/Reveal'
+import RevealImage from '../../components/RevealImage'
 import CTASection from '../../components/CTASection'
 import { LinkedInIcon, ArrowIcon } from '../../components/Icons'
 
@@ -36,7 +37,7 @@ function Block({ block }) {
   switch (block.type) {
     case 'h2':
       return (
-        <h2 className="font-display mt-12 mb-4 text-2xl font-bold text-strong sm:text-3xl">
+        <h2 className="font-display mt-14 mb-4 text-2xl font-medium text-strong sm:text-3xl">
           {block.text}
         </h2>
       )
@@ -45,7 +46,7 @@ function Block({ block }) {
         <ul className="my-6 space-y-3">
           {block.items.map((item) => (
             <li key={item} className="flex gap-3 text-base leading-relaxed text-fg">
-              <span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-firozi-500" aria-hidden="true" />
+              <span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-firozi-700" aria-hidden="true" />
               {item}
             </li>
           ))}
@@ -53,8 +54,8 @@ function Block({ block }) {
       )
     case 'quote':
       return (
-        <figure className="my-10 border-l-2 border-firozi-500 pl-6">
-          <blockquote className="font-display text-xl leading-relaxed font-semibold text-balance text-strong sm:text-2xl">
+        <figure className="my-12 border-l-2 border-firozi-700 pl-6">
+          <blockquote className="font-display text-xl leading-relaxed font-medium text-balance text-strong sm:text-2xl">
             “{block.text}”
           </blockquote>
           {block.by && <figcaption className="mt-3 text-sm text-accent">— {block.by}</figcaption>}
@@ -91,28 +92,21 @@ export default async function PostPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <PageHeader
-        eyebrow={post.category}
-        title={post.title}
-        intro={post.excerpt}
-        breadcrumbs={[{ name: 'Case Studies', href: '/blog' }, { name: post.title }]}
-      />
+      <PageHeader eyebrow={post.category} title={post.title} intro={post.excerpt} />
 
       <Section tone="light" className="py-16 sm:py-20">
         <article className="container-x">
           <Reveal className="mx-auto max-w-4xl">
-            <img
+            <RevealImage
               src={post.image}
               alt={post.title}
-              className="aspect-video w-full rounded-2xl"
-              sizes="(max-width: 1024px) 100vw, 60vw"
+              className="aspect-video w-full rounded-xl"
               priority
-              overlay={false}
             />
           </Reveal>
 
-          <Reveal className="mx-auto mt-12 max-w-3xl">
-            <div className="border-hairline flex flex-wrap items-center gap-3 border-y py-4 text-xs text-muted">
+          <Reveal className="mx-auto mt-12 max-w-2xl">
+            <div className="flex flex-wrap items-center gap-3 border-y border-hairline py-4 text-xs text-muted">
               <time dateTime={post.date}>
                 {new Date(post.date).toLocaleDateString('en-IN', {
                   day: 'numeric',
@@ -137,7 +131,7 @@ export default async function PostPage({ params }) {
                 href={post.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-12 inline-flex items-center gap-2.5 rounded-xl bg-[#0A66C2] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#0b5aa8]"
+                className="mt-12 inline-flex items-center gap-2.5 rounded-full bg-[#0A66C2] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#0b5aa8]"
               >
                 <LinkedInIcon className="size-4" />
                 Discuss this on LinkedIn
@@ -149,43 +143,43 @@ export default async function PostPage({ params }) {
 
       {/* More case studies */}
       {others.length > 0 && (
-        <Section tone="tint" className="border-hairline border-t py-20">
+        <Section tone="tint" className="border-hairline border-t py-20 sm:py-24">
           <div className="container-x">
-            <Reveal className="mx-auto max-w-3xl">
-              <h2 className="font-display text-2xl font-bold text-strong">More case studies</h2>
+            <Reveal className="mx-auto max-w-2xl">
+              <h2 className="font-display text-h2 font-medium text-strong">More case studies</h2>
             </Reveal>
 
             <Reveal
-              stagger={0.09}
-              className="mx-auto mt-7 grid max-w-3xl grid-cols-1 gap-5 sm:grid-cols-2"
+              stagger={0.1}
+              className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2"
             >
               {others.map((other) => (
                 <Link
                   key={other.slug}
                   href={`/blog/${other.slug}`}
-                  className="card group overflow-hidden rounded-2xl transition hover:-translate-y-1 hover:border-firozi-500/50"
+                  className="group flex flex-col"
                 >
-                  <img
-                    // image={other.cover}
-                    src={other.image}
-                    alt={other.title}
-                    art={other.art}
-                    // className="aspect-video w-full"
-                    ClassName="object-cover transition duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, 33vw"
-                  />
-                  <div className="p-6">
-                    <span className="text-[11px] font-semibold tracking-wide text-accent uppercase">
-                      {other.category}
-                    </span>
-                    <h3 className="font-display mt-3 text-base leading-snug font-semibold text-strong transition group-hover:text-accent">
-                      {other.title}
-                    </h3>
-                    <span className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-accent">
-                      Read
-                      <ArrowIcon className="size-3 transition-transform group-hover:translate-x-1" />
-                    </span>
+                  <div className="figure-clip aspect-video w-full rounded-lg">
+                    <img
+                      src={other.image}
+                      alt={other.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
                   </div>
+                  <span className="mt-4 font-label text-[11px] font-semibold tracking-wide text-accent uppercase">
+                    {other.category}
+                  </span>
+                  <h3 className="font-display mt-2 text-h3 leading-snug font-medium text-strong transition group-hover:text-accent">
+                    {other.title}
+                  </h3>
+                  <span className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-strong">
+                    <span className="border-b border-ink-900/20 pb-0.5 transition-colors group-hover:border-firozi-700">
+                      Read
+                    </span>
+                    <ArrowIcon className="size-3 text-accent transition-transform group-hover:translate-x-1" />
+                  </span>
                 </Link>
               ))}
             </Reveal>

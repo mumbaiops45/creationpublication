@@ -1,5 +1,4 @@
 'use client'
-
 import { useActionState } from 'react'
 import { useFormStatus } from 'react-dom'
 import { submitEnquiry } from '@/lib/actions'
@@ -8,9 +7,9 @@ const initialState = { ok: false, errors: {}, message: '' }
 
 
 const inputClass =
-  'w-full rounded-lg border bg-[var(--surface-sunken)] border-[var(--hairline)] px-4 py-3 text-sm ' +
-  'text-[var(--fg)] placeholder:text-[var(--fg-muted)] outline-none transition ' +
-  'focus:border-firozi-500 focus:ring-2 focus:ring-firozi-500/25'
+  'w-full rounded-lg border bg-(--surface-raised) border-(--hairline) px-4 py-3 text-sm ' +
+  'text-(--fg) placeholder:text-(--fg-muted) outline-none transition ' +
+  'focus:border-firozi-700 focus:ring-2 focus:ring-firozi-700/15'
 
 function SubmitButton() {
   const { pending } = useFormStatus()
@@ -18,11 +17,11 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-lg bg-firozi-500 px-6 py-3.5 text-sm font-semibold text-ink-900 shadow-lg shadow-firozi-500/20 transition hover:bg-firozi-400 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+      className="group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-ink-900 px-7 py-3.5 text-sm font-semibold text-paper-50 transition hover:bg-ink-800 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
     >
       {pending ? (
         <>
-          <span className="size-4 animate-spin rounded-full border-2 border-ink-900/30 border-t-ink-900" />
+          <span className="size-4 animate-spin rounded-full border-2 border-paper-50/30 border-t-paper-50" />
           Sending…
         </>
       ) : (

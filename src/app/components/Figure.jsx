@@ -1,6 +1,4 @@
-import Image from 'next/image'
 import MediaArt from './MediaArt'
-
 
 export default function Figure({
   image,
@@ -8,7 +6,6 @@ export default function Figure({
   art,
   className = '',
   imgClassName = 'object-cover',
-  sizes = '(max-width: 768px) 100vw, 33vw',
   priority = false,
   overlay = true,
 }) {
@@ -18,13 +15,12 @@ export default function Figure({
         <img
           src={image}
           alt={alt}
-          fill
-          sizes={sizes}
-          priority={priority}
-          className={imgClassName}
+          loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
+          className={`absolute inset-0 h-full w-full ${imgClassName}`}
         />
       ) : (
-        <MediaArt name={art} className="size-full object-cover" />
+        <MediaArt name={art} className="absolute inset-0 h-full w-full object-cover" />
       )}
 
       {overlay && (

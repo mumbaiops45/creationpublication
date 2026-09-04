@@ -1,44 +1,95 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ServiceIcon from './ServiceIcon'
-import Figure from './Figure'
 import { ArrowIcon } from './Icons'
 
 export default function ServiceCard({ service, index }) {
+  const root = useRef(null)
+  const frame = useRef(null)
+  const img = useRef(null)
+
+  useEffect(() => {
+    const el = root.current
+    if (!el) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    gsap.registerPlugin(ScrollTrigger)
+    const delay = (index % 3) * 0.08
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        delay,
+        scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+      })
+      tl.from(frame.current, {
+        clipPath: 'inset(100% 0% 0% 0%)',
+        duration: 0.95,
+        ease: 'power4.inOut',
+      })
+        .from(img.current, { scale: 1.3, duration: 1.2, ease: 'power3.out' }, 0)
+        .from(
+          el.querySelectorAll('[data-card-fade]'),
+          { opacity: 0, y: 18, duration: 0.6, stagger: 0.08, ease: 'power3.out' },
+          '-=0.5',
+        )
+    }, el)
+
+    return () => ctx.revert()
+  }, [index])
+
   return (
     <Link
+      ref={root}
       href={`/services/${service.slug}`}
-      className="card group relative flex flex-col overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1.5 hover:border-firozi-500/50 hover:shadow-xl"
+      className="group flex flex-col"
     >
-      <Figure
-        image={service.image}
-        alt={`${service.title} advertising by Creation Publicity`}
-        art={service.icon}
-        className="aspect-[16/10] w-full"
-        imgClassName="object-cover transition duration-500 group-hover:scale-105"
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-      />
-
-      <span
-        className="font-display absolute top-4 right-5 z-10 text-4xl font-bold text-white/25"
-        aria-hidden="true"
+      <div
+        ref={frame}
+        className="figure-clip aspect-[4/3] w-full rounded-lg"
+        style={{ clipPath: 'inset(0% 0% 0% 0%)' }}
       >
-        {String(index + 1).padStart(2, '0')}
-      </span>
-
-      <div className="relative flex grow flex-col p-7">
-        {/* Straddles the artwork edge: half over the image, half over the body. */}
-        <span className="-mt-14 mb-5 flex size-14 items-center justify-center rounded-xl border border-firozi-400/30 bg-ink-900/90 text-firozi-300 shadow-lg backdrop-blur-sm">
-          <ServiceIcon name={service.icon} />
+        <img
+          ref={img}
+          src={service.image}
+          alt={`${service.title} advertising by Creation Publicity`}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full scale-[1.05] object-cover transition-transform duration-[1.1s] ease-out group-hover:scale-[1.1]"
+        />
+        <span
+          className="font-display absolute top-4 right-5 text-sm font-medium text-paper-50/90 mix-blend-difference"
+          aria-hidden="true"
+        >
+          {String(index + 1).padStart(2, '0')}
         </span>
+      </div>
 
-        <h3 className="font-display text-lg font-semibold text-strong transition group-hover:text-accent">
-          {service.title}
-        </h3>
-        <p className="mt-2.5 grow text-sm leading-relaxed text-muted">{service.short}</p>
+      <div className="mt-5 flex grow flex-col">
+        <div data-card-fade className="flex items-center gap-3">
+          <span className="flex size-9 items-center justify-center rounded-lg bg-accent-soft text-accent">
+            <ServiceIcon name={service.icon} className="size-5" />
+          </span>
+          <h3 className="font-display text-h3 font-medium text-strong transition group-hover:text-accent">
+            {service.title}
+          </h3>
+        </div>
 
-        <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent">
-          View details &amp; enquire
-          <ArrowIcon className="size-3.5 transition-transform group-hover:translate-x-1" />
+        <p data-card-fade className="mt-3 grow text-sm leading-relaxed text-muted">
+          {service.short}
+        </p>
+
+        <span
+          data-card-fade
+          className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-strong"
+        >
+          <span className="border-b border-ink-900/20 pb-0.5 transition-colors group-hover:border-firozi-700">
+            View details &amp; enquire
+          </span>
+          <ArrowIcon className="size-3.5 text-accent transition-transform group-hover:translate-x-1" />
         </span>
       </div>
     </Link>

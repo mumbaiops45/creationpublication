@@ -6,7 +6,7 @@ import PageHeader from '../../components/PageHeader'
 import Section from '../../components/Section'
 import EnquiryForm from '../../components/EnquiryForm'
 import ServiceIcon from '../../components/ServiceIcon'
-import Figure from '../../components/Figure'
+import RevealImage from '../../components/RevealImage'
 import Reveal from '../../components/Reveal'
 import { ArrowIcon } from '../../components/Icons'
 
@@ -58,33 +58,25 @@ export default async function ServiceDetailPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
-      <PageHeader
-        eyebrow="Service"
-        title={service.title}
-        intro={service.description}
-        breadcrumbs={[{ name: 'Services', href: '/services' }, { name: service.title }]}
-        art={service.icon}
-      />
+      <PageHeader eyebrow="Service" title={service.title} intro={service.description} />
 
-      <Section tone="light" className="py-20 sm:py-24">
+      <Section tone="light" className="py-20 sm:py-28">
         <div className="container-x grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
-            <Reveal className="card overflow-hidden rounded-2xl">
-              <Figure
-                image={service.image}
+            <Reveal className="lg:sticky lg:top-28">
+              <RevealImage
+                src={service.image}
                 alt={`${service.title} — advertising by ${site.name}`}
-                art={service.icon}
-                className="aspect-[16/9] w-full"
-                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="aspect-4/3 w-full rounded-xl"
                 priority
               />
 
-              <div className="p-8">
-                <span className="border-hairline -mt-15 mb-6 flex size-14 items-center justify-center rounded-xl border bg-(--surface-raised) text-accent shadow-lg">
-                  <ServiceIcon name={service.icon} className="size-7" />
+              <div className="mt-8">
+                <span className="mb-5 flex size-12 items-center justify-center rounded-xl bg-accent-soft text-accent">
+                  <ServiceIcon name={service.icon} className="size-6" />
                 </span>
 
-                <h2 className="font-display text-xl font-semibold text-strong">What this covers</h2>
+                <h2 className="font-display text-h3 font-medium text-strong">What this covers</h2>
                 <ul className="mt-5 space-y-3.5">
                   {service.highlights.map((highlight) => (
                     <li key={highlight} className="flex gap-3 text-sm leading-relaxed text-fg">
@@ -105,11 +97,11 @@ export default async function ServiceDetailPage({ params }) {
                   ))}
                 </ul>
 
-                <div className="border-hairline mt-8 border-t pt-6">
+                <div className="mt-8 border-t border-hairline pt-6">
                   <p className="text-xs text-muted">Need this urgently?</p>
                   <a
                     href={`tel:${site.phoneRaw}`}
-                    className="font-display mt-1.5 block text-lg font-bold text-accent hover:underline"
+                    className="font-display mt-1.5 block text-xl font-medium text-strong hover:text-accent"
                   >
                     {site.phone}
                   </a>
@@ -127,29 +119,29 @@ export default async function ServiceDetailPage({ params }) {
         </div>
       </Section>
 
-      <Section tone="tint" className="border-hairline border-t py-20">
+      <Section tone="tint" className="border-hairline border-t py-20 sm:py-24">
         <div className="container-x">
           <Reveal>
-            <h2 className="font-display text-2xl font-bold text-strong sm:text-3xl">
+            <h2 className="font-display text-h2 font-medium text-strong">
               Other services you may need
             </h2>
           </Reveal>
 
-          <Reveal stagger={0.08} className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-3">
+          <Reveal stagger={0.08} className="mt-10 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-3">
             {others.map((other) => (
               <Link
                 key={other.slug}
                 href={`/services/${other.slug}`}
-                className="card group flex items-start gap-4 rounded-2xl p-6 transition hover:-translate-y-1 hover:border-firozi-500/50"
+                className="group flex items-start gap-4 border-t border-hairline pt-5"
               >
-                <span className="bg-accent-soft border-hairline flex size-11 shrink-0 items-center justify-center rounded-lg border text-accent">
-                  <ServiceIcon name={other.icon} className="size-5.5" />
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent-soft text-accent">
+                  <ServiceIcon name={other.icon} className="size-5" />
                 </span>
                 <span>
-                  <span className="font-display block text-sm font-semibold text-strong transition group-hover:text-accent">
+                  <span className="font-display block text-h3 font-medium text-strong transition group-hover:text-accent">
                     {other.title}
                   </span>
-                  <span className="mt-1.5 flex items-center gap-1.5 text-xs text-accent">
+                  <span className="mt-1.5 flex items-center gap-1.5 text-xs font-semibold text-accent">
                     View
                     <ArrowIcon className="size-3 transition-transform group-hover:translate-x-1" />
                   </span>

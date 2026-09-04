@@ -11,7 +11,7 @@ export const posts = [
     readTime: '5 min read',
     cover: '',
     linkedin: '',
-    image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnVbPy22af7B5moi89fqX_1Pf4gbOHrKd8RyUUheHjP66GgGQVmXl5H6g&s=10',
+    image:'https://mir-s3-cdn-cf.behance.net/projects/808/cdcb90198100593.Y3JvcCwxNDE4LDExMDksMjg3LDQy.jpg',
     body: [
       {
         type: 'p',
@@ -59,7 +59,7 @@ export const posts = [
     readTime: '4 min read',
     cover: '',
     linkedin: '',
-    image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4FhFiqrqbkpsZ6vA1OsiqMURcd1JBOAwuoN50TWOaagq4mO2a2Fck8gk&s=10',
+    image:'https://assets.the-afc.com/migration/g/x/gxvmhfkksnocrxl3ewq2.jpg',
     body: [
       {
         type: 'p',
@@ -97,7 +97,7 @@ export const posts = [
     readTime: '4 min read',
     cover: '',
     linkedin: '',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFtkBumj2XQQQw0z9PG16pHYVy0KIqoad_Zh4DKlwoS1OcoXjfisyRf-uZ&s=10',
+    image: 'https://c8.alamy.com/comp/2DYY1T7/red-banner-with-50-percent-discount-at-the-entrance-to-the-clothing-store-during-the-seasonal-sale-concept-of-promotion-advertising-shopping-and-bl-2DYY1T7.jpg',
     body: [
       {
         type: 'p',

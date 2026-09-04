@@ -8,13 +8,15 @@ export default function Reveal({
   children,
   className = '',
   as: Tag = 'div',
-  y = 28,
+  y = 30,
   x = 0,
   scale = 1,
-  duration = 0.9,
+  blur = 4,
+  duration = 1,
   delay = 0,
   stagger = 0,
-  start = 'top 85%',
+  start = 'top 82%',
+  once = true,
   ...rest
 }) {
   const ref = useRef(null)
@@ -33,23 +35,31 @@ export default function Reveal({
     const ctx = gsap.context(() => {
       gsap.fromTo(
         targets,
-        { opacity: 0, y, x, scale },
+        {
+          opacity: 0,
+          y,
+          x,
+          scale,
+          filter: blur ? `blur(${blur}px)` : 'blur(0px)',
+        },
         {
           opacity: 1,
           y: 0,
           x: 0,
           scale: 1,
+          filter: 'blur(0px)',
           duration,
           delay,
           stagger,
           ease: 'power3.out',
-          scrollTrigger: { trigger: el, start, once: true },
+          clearProps: 'filter',
+          scrollTrigger: { trigger: el, start, once },
         },
       )
     }, el)
 
     return () => ctx.revert()
-  }, [isGroup, y, x, scale, duration, delay, stagger, start])
+  }, [isGroup, y, x, scale, blur, duration, delay, stagger, start, once])
 
   const marker = isGroup ? { 'data-reveal-group': '' } : { 'data-reveal': '' }
 

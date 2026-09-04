@@ -41,7 +41,7 @@ export const nav = [
   { name: 'About Us', href: '/about-us' },
   { name: 'Services', href: '/services' },
   { name: 'Statistics', href: '/statistics' },
-  { name: 'Clients', href: '/clients' },
+  // { name: 'Clients', href: '/clients' },
   { name: 'Case Studies', href: '/blog' },
   { name: 'Contact Us', href: '/contact' },
 ]

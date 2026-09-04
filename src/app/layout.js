@@ -1,14 +1,16 @@
-import { Inter, Sora } from 'next/font/google'
+import { Inter, Sora, Fraunces } from 'next/font/google'
 import './globals.css'
 import { site } from '@/content/site'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import FloatingActions from './components/FloatingActions'
 import SmoothScroll from './components/SmoothScroll'
+import ScrollProgress from './components/ScrollProgress'
+import PageLoader from './components/PageLoader'
 
 const sora = Sora({
   subsets: ['latin'],
-  weight: ['400', '600', '700', '800'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-sora',
   display: 'swap',
 })
@@ -16,6 +18,15 @@ const sora = Sora({
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
+})
+
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  axes: ['opsz'],
+  variable: '--font-fraunces',
   display: 'swap',
 })
 
@@ -62,8 +73,8 @@ export const metadata = {
 }
 
 export const viewport = {
-  themeColor: '#04121a',
-  colorScheme: 'dark',
+  themeColor: '#f7f3ec',
+  colorScheme: 'light',
 }
 
 const organizationSchema = {
@@ -87,9 +98,13 @@ const organizationSchema = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-IN" className={`${sora.variable} ${inter.variable}`}>
+    <html
+      lang="en-IN"
+      className={`${fraunces.variable} ${sora.variable} ${inter.variable}`}
+      suppressHydrationWarning
+    >
       <head>
-       
+
         <script
           dangerouslySetInnerHTML={{
             __html: `document.documentElement.classList.add('js-ready')`,
@@ -103,12 +118,14 @@ export default function RootLayout({ children }) {
       <body className="min-h-screen antialiased">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-firozi-500 focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-ink-900"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[300] focus:rounded-lg focus:bg-firozi-700 focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-paper-50"
         >
           Skip to content
         </a>
 
+        <PageLoader />
         <SmoothScroll />
+        <ScrollProgress />
         <Navbar />
         <main id="main">{children}</main>
         <Footer />

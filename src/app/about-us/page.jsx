@@ -4,7 +4,7 @@ import Section from '../components/Section'
 import SectionHeading from '../components/SectionHeading'
 import Counter from '../components/Counter'
 import Reveal from '../components/Reveal'
-import Figure from '../components/Figure'
+import RevealImage from '../components/RevealImage'
 import CTASection from '../components/CTASection'
 
 export const metadata = {
@@ -64,13 +64,12 @@ export default function AboutPage() {
         eyebrow="About Us"
         title="An advertising agency built on follow-through"
         intro="We started in 1999 as a two-person outdoor media desk in Mumbai. Twenty-five years later we plan and execute campaigns in more than 120 cities — and the reason clients stay is unchanged: what we promise is what goes up."
-        breadcrumbs={[{ name: 'About Us' }]}
-        art="mall"
       />
-      <Section tone="light" className="py-20 sm:py-24">
+
+      <Section tone="light" className="py-20 sm:py-28">
         <div className="container-x grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-7">
-            <div className="space-y-5 text-base leading-relaxed text-pretty text-fg">
+            <div className="space-y-5 text-base leading-relaxed text-pretty text-fg sm:text-lg">
               <p>
                 Creation Publicity Pvt. Ltd. began with a single conviction: that outdoor advertising
                 fails far more often on execution than on creative. A brilliant campaign on a badly
@@ -89,29 +88,30 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
-              <img
-                src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcP0QIXVZnui4CpWztq7NjchyTwzBSNcyulDffxiXjQUYa1eQ5v42kx4eC&s=10'
+            <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
+              <RevealImage
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcP0QIXVZnui4CpWztq7NjchyTwzBSNcyulDffxiXjQUYa1eQ5v42kx4eC&s=10"
                 alt="Print collateral produced by Creation Publicity"
-                className="aspect-4/3 w-full rounded-2xl"
-                overlay={false}
+                className="aspect-4/3 w-full rounded-xl"
               />
-              <img
-                src='https://www.adworthmedia.org/wp-content/uploads/2023/03/1-1.jpg'
+              <RevealImage
+                src="https://www.adworthmedia.org/wp-content/uploads/2023/03/1-1.jpg"
                 alt="Bus branding delivered by Creation Publicity"
-                className="aspect-4/3 w-full rounded-2xl"
-                overlay={false}
+                className="aspect-4/3 w-full rounded-xl"
+                start="top 92%"
               />
             </div>
           </Reveal>
 
           <Reveal className="lg:col-span-5" delay={0.15}>
-            <div className="card rounded-2xl p-8 lg:sticky lg:top-28">
-              <h2 className="font-display text-lg font-semibold text-strong">At a glance</h2>
-              <dl className="mt-6 grid grid-cols-2 gap-6">
+            <div className="lg:sticky lg:top-28">
+              <h2 className="font-label text-xs font-semibold tracking-[0.2em] text-accent uppercase">
+                At a glance
+              </h2>
+              <dl className="mt-6 grid grid-cols-2 gap-x-8 gap-y-8">
                 {stats.slice(0, 4).map((stat) => (
-                  <div key={stat.label}>
-                    <dt className="font-display text-3xl font-bold text-accent">
+                  <div key={stat.label} className="border-t border-hairline pt-4">
+                    <dt className="font-display text-4xl font-medium text-strong">
                       <Counter value={stat.value} suffix={stat.suffix} />
                     </dt>
                     <dd className="mt-1.5 text-xs leading-snug text-muted">{stat.label}</dd>
@@ -123,22 +123,23 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section tone="dark" className="relative overflow-hidden py-24">
-        <div className="grid-bg absolute inset-0 opacity-50" aria-hidden="true" />
+      <Section tone="dark" className="surface relative overflow-hidden py-24 sm:py-32">
+        <div className="grid-bg absolute inset-0 opacity-25" aria-hidden="true" />
         <div className="container-x relative">
           <SectionHeading
+            align="left"
             eyebrow="How We Work"
             title="Three things we will not compromise on"
             intro="They sound obvious. In this industry they are not."
           />
 
-          <Reveal stagger={0.1} className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+          <Reveal stagger={0.12} className="mt-16 grid grid-cols-1 gap-x-10 gap-y-10 md:grid-cols-3">
             {values.map((value, index) => (
-              <div key={value.title} className="card rounded-2xl p-8">
-                <span className="font-display text-xs font-bold tracking-widest text-accent opacity-70">
+              <div key={value.title} className="border-t border-hairline pt-5">
+                <span className="font-label text-xs font-semibold tracking-widest text-accent">
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                <h3 className="font-display mt-3.5 text-lg font-semibold text-strong">{value.title}</h3>
+                <h3 className="font-display mt-4 text-h3 font-medium text-strong">{value.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{value.body}</p>
               </div>
             ))}
@@ -146,26 +147,27 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section tone="light" className="py-24">
+      <Section tone="light" className="py-24 sm:py-32">
         <div className="container-x">
           <SectionHeading
+            align="left"
             eyebrow="Our Team"
             title="The people behind the campaigns"
             intro="A compact senior team, so the person who takes your brief is the person who owns the delivery."
           />
 
-          <Reveal stagger={0.08} className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal stagger={0.1} className="mt-16 grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((member) => (
-              <div key={member.role} className="card rounded-2xl p-7 text-center">
-                <span className="font-display bg-accent-soft border-hairline mx-auto flex size-18 items-center justify-center rounded-full border text-lg font-bold text-accent">
+              <div key={member.role} className="border-t border-hairline pt-5">
+                <span className="font-label flex size-14 items-center justify-center rounded-full bg-accent-soft text-sm font-semibold text-accent">
                   {member.name
                     .split(' ')
                     .map((word) => word[0])
                     .join('')
                     .slice(0, 2)}
                 </span>
-                <h3 className="font-display mt-5 text-base font-semibold text-strong">{member.name}</h3>
-                <p className="mt-1 text-xs font-medium tracking-wide text-accent uppercase">
+                <h3 className="font-display mt-5 text-h3 font-medium text-strong">{member.name}</h3>
+                <p className="mt-1 font-label text-[11px] font-medium tracking-wide text-accent uppercase">
                   {member.role}
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{member.bio}</p>
@@ -173,7 +175,7 @@ export default function AboutPage() {
             ))}
           </Reveal>
 
-          <Reveal className="mt-8 text-center" delay={0.2}>
+          <Reveal className="mt-10" delay={0.2}>
             <p className="text-xs text-muted">
               Replace these placeholders with real names, photographs and bios in{' '}
               <code className="card-sunken rounded px-1.5 py-0.5 text-accent">

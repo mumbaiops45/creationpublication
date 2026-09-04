@@ -3,20 +3,16 @@ import Reveal from './Reveal'
 
 export default function Testimonials() {
   return (
-    <Reveal stagger={0.1} className="grid grid-cols-1 gap-6 md:grid-cols-2">
+    <Reveal stagger={0.12} className="grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-hairline bg-(--hairline) sm:grid-cols-2">
       {testimonials.map((item) => (
-        <figure key={item.author} className="card relative rounded-2xl p-8">
-          <span
-            className="font-display absolute top-4 right-7 text-6xl leading-none text-accent opacity-25"
-            aria-hidden="true"
-          >
-            &rdquo;
-          </span>
-          <blockquote className="relative text-sm leading-relaxed text-pretty text-fg">
+        <figure key={item.author} className="flex flex-col justify-between bg-(--surface-raised) p-8 sm:p-10">
+          <blockquote className="font-display text-lg leading-snug text-pretty text-strong sm:text-xl">
+            <span className="text-accent">“</span>
             {item.quote}
+            <span className="text-accent">”</span>
           </blockquote>
-          <figcaption className="border-hairline mt-6 flex items-center gap-3.5 border-t pt-5">
-            <span className="font-display bg-accent-soft flex size-11 shrink-0 items-center justify-center rounded-full text-sm font-bold text-accent">
+          <figcaption className="mt-8 flex items-center gap-3.5 border-t border-hairline pt-5">
+            <span className="font-label flex size-10 shrink-0 items-center justify-center rounded-full bg-accent-soft text-xs font-bold text-accent">
               {item.author
                 .split(' ')
                 .map((word) => word[0])
