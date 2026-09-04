@@ -114,7 +114,7 @@ export default function Hero() {
             data-hero-sub
             className="mt-8 max-w-xl text-base leading-relaxed text-pretty text-fg sm:text-lg"
           >
-            We put your brand where India actually looks — on landmark
+            We put your brand where India actually looks on landmark
             hoardings, inside malls and multiplexes, across transit networks,
             on every shopfront and everywhere online.
           </p>

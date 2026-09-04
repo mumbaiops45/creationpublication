@@ -12,7 +12,7 @@ export default function CTASection({
   body = 'Tell us your city, your budget and your timeline. We will come back with a media plan and costing within one business day.',
 }) {
   return (
-    <Section  className="surface relative bg-[#F8FEFF] overflow-hidden py-24 sm:py-32">
+    <Section  className="surface relative bg-[#0160AA] overflow-hidden py-24 sm:py-32">
       <div
         className="pointer-events-none absolute -top-40 left-1/2 size-[36rem] -translate-x-1/2 rounded-full bg-brass-400/8 blur-[130px]"
         aria-hidden="true"
@@ -27,26 +27,26 @@ export default function CTASection({
         </SplitLines>
 
         <Reveal delay={0.12}>
-          <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-pretty text-muted sm:text-base">
+          <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-pretty text-white sm:text-base">
             {body}
           </p>
         </Reveal>
 
         <Reveal delay={0.2} className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Magnetic className="w-full sm:w-auto">
+          <div className="w-full sm:w-auto">
             <Link
               href="/contact"
-              className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-brass-400 px-8 py-4 text-sm font-semibold text-ink-900 transition hover:bg-brass-300 sm:w-auto"
+              className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-slate-50 px-8 py-4 text-sm font-semibold text-ink-900 transition hover:bg-brass-300 sm:w-auto"
             >
               Enquire Now
               <ArrowIcon className="size-4 transition-transform group-hover:translate-x-1" />
             </Link>
-          </Magnetic>
+          </div>
           <a
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex w-full items-center justify-center gap-2.5 rounded-full border border-(--hairline-strong) px-8 py-4 text-sm font-semibold text-strong transition hover:bg-paper-50/5 sm:w-auto"
+            className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-slate-50 px-8 py-4 text-sm font-semibold text-ink-900 transition hover:bg-brass-300 sm:w-auto"
           >
             <WhatsAppIcon className="size-5" />
             WhatsApp Us

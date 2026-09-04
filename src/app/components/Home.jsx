@@ -16,7 +16,7 @@ import EditorialRow from './EditorialRow'
 const pillars = [
     {
         title: 'One agency, every medium',
-        body: 'Hoardings, malls, transit, retail signage, print and digital planned together — so your budget is split by what performs, not by who sells it.',
+        body: 'Hoardings, malls, transit, retail signage, print and digital planned together  so your budget is split by what performs, not by who sells it.',
     },
     {
         title: 'Owned & partnered inventory',
@@ -72,7 +72,7 @@ export default function Home() {
                         align="left"
                         eyebrow="By The Numbers"
                         title="Twenty-five years of putting brands outdoors"
-                        intro="We have been planning and executing campaigns since 1999 — long enough to know which sites deliver and which ones only look good on a rate card."
+                        intro="We have been planning and executing campaigns since 1999 long enough to know which sites deliver and which ones only look good on a rate card."
                     />
 
                     <Reveal
@@ -144,7 +144,7 @@ export default function Home() {
                         align="left"
                         eyebrow="Case Studies"
                         title="Campaigns we are happy to talk about"
-                        intro="Real briefs, real constraints, real numbers — written up in full so you can judge the work rather than the pitch."
+                        intro="Real briefs, real constraints, real numbers written up in full so you can judge the work rather than the pitch."
                     />
 
                     <div className="mt-8">

@@ -4,11 +4,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-/**
- * A hairline / connector that draws itself from 0 → full on scroll.
- * axis="x" → horizontal rule (draws left→right), axis="y" → vertical connector (draws top→bottom).
- * scrub links the draw to scroll position; otherwise it plays once on enter.
- */
+
 export default function LineDraw({
   axis = 'x',
   className = '',

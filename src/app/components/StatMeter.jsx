@@ -4,10 +4,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-/**
- * Capability row: the percentage counts up in lockstep with the bar filling,
- * both driven by one ScrollTrigger so the number and the visual never drift.
- */
+
 export default function StatMeter({ label, value = 0, className = '' }) {
   const root = useRef(null)
   const bar = useRef(null)

@@ -17,14 +17,14 @@ export default function SectionHeading({ eyebrow, title, intro, align = 'center'
 
       <SplitLines
         as="h2"
-        className="mt-5 font-display text-h2 font-medium text-balance text-strong"
+        className="mt-5 font-display text-h2 font-medium text-slate-950"
       >
         {title}
       </SplitLines>
 
       {intro && (
         <Reveal delay={0.12}>
-          <p className="mt-5 text-base leading-relaxed text-pretty text-muted">{intro}</p>
+          <p className="mt-5 text-base leading-relaxed text-pretty text-slate-800">{intro}</p>
         </Reveal>
       )}
     </div>

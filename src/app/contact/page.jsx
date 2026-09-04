@@ -9,7 +9,7 @@ import { InstagramIcon, LinkedInIcon, PhoneIcon, WhatsAppIcon } from '../compone
 
 export const metadata = {
   title: 'Contact Us',
-  description: `Get in touch with ${site.name} — call ${site.phone}, message us on WhatsApp, or send an enquiry and we will respond within one business day.`,
+  description: `Get in touch with ${site.name}  call ${site.phone}, message us on WhatsApp, or send an enquiry and we will respond within one business day.`,
   alternates: { canonical: '/contact' },
 }
 

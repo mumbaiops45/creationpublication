@@ -3,10 +3,11 @@ import Section from './Section'
 import SplitLines from './SplitLines'
 
 export default function PageHeader({ eyebrow, title, intro }) {
+  // bg-[#F8FEFF]
   return (
     <Section
       tone="light"
-      className="surface relative overflow-hidden bg-[#F8FEFF] pt-40 pb-16 sm:pt-48 sm:pb-24"
+      className="surface relative overflow-hidden bg-[#0160AA] pt-40 pb-16 sm:pt-48 sm:pb-24"
     >
       <div 
          className="pointer-events-none absolute -top-32 right-[-10%] size-[34rem] rounded-full bg-firozi-600/5 blur-[120px]"
@@ -26,14 +27,14 @@ export default function PageHeader({ eyebrow, title, intro }) {
 
           <SplitLines
             as="h1"
-            className="mt-6 font-display text-display font-medium tracking-tight text-balance text-strong"
+            className="mt-6 font-display text-display font-medium tracking-tight text-black"
           >
             {title}
           </SplitLines>
 
           {intro && (
             <Reveal delay={0.15}>
-              <p className="mt-7 max-w-2xl text-base leading-relaxed text-pretty text-muted sm:text-lg">
+              <p className="mt-7 max-w-2xl text-base leading-relaxed text-pretty text-slate-100 sm:text-lg">
                 {intro}
               </p>
             </Reveal>

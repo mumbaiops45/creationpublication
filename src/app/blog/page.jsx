@@ -10,7 +10,7 @@ import { LinkedInIcon } from '../components/Icons'
 export const metadata = {
   title: 'Case Studies & Insights',
   description:
-    'Campaign write-ups from Creation Publicity — multi-city hoarding launches, mall activations and retail signage rollouts, with the numbers behind each.',
+    'Campaign write-ups from Creation Publicity  multi-city hoarding launches, mall activations and retail signage rollouts, with the numbers behind each.',
   alternates: { canonical: '/blog' },
 }
 
@@ -54,7 +54,6 @@ export default function BlogPage() {
         </div>
       </Section>
 
-      {/* LinkedIn tie-in */}
       <Section tone="tint" className="border-hairline border-y py-20 sm:py-24">
         <div className="container-x">
           <Reveal className="flex flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
@@ -66,7 +65,7 @@ export default function BlogPage() {
                 We post campaign updates on LinkedIn first
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-muted">
-                Site photographs, launch announcements and behind-the-scenes from live campaigns —
+                Site photographs, launch announcements and behind-the-scenes from live campaigns
                 follow {site.linkedinHandle} to see the work as it goes up.
               </p>
             </div>

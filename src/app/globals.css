@@ -2,32 +2,36 @@
 
 
 @theme {
-  --color-firozi-50: #ecfeff;
-  --color-firozi-100: #cffafe;
-  --color-firozi-200: #a5f3fc;
-  --color-firozi-300: #67e8f9;
-  --color-firozi-400: #22d3ee;
-  --color-firozi-500: #06b6d4;
-  --color-firozi-600: #0891b2;
-  --color-firozi-700: #0e7490;
-  --color-firozi-800: #155e75;
-  --color-firozi-900: #164e63;
+  /* Brand blue #0160AA — the site's single accent. (var name still "firozi"
+     for now; a later pass renames these tokens to --color-brand-*.) */
+  --color-firozi-50: #eef4fb;
+  --color-firozi-100: #d6e6f4;
+  --color-firozi-200: #aecde9;
+  --color-firozi-300: #74a8d8;
+  --color-firozi-400: #2f7cbf;
+  --color-firozi-500: #0160aa;
+  --color-firozi-600: #01508d;
+  --color-firozi-700: #013c6c;
+  --color-firozi-800: #0a2c49;
+  --color-firozi-900: #08223a;
 
- 
-  --color-ink-900: #17140f;
-  --color-ink-800: #1e1a14;
-  --color-ink-700: #29241c;
-  --color-ink-600: #3a3327;
+  /* Dark bands — cool navy, not warm black */
+  --color-ink-900: #0a2540;
+  --color-ink-800: #0e2c49;
+  --color-ink-700: #143a5c;
+  --color-ink-600: #1f4c74;
 
+  /* Ground — cool near-white, not warm cream */
+  --color-paper-50: #ffffff;
+  --color-paper-100: #f7f9fb;
+  --color-paper-200: #eef2f6;
+  --color-paper-300: #e2e8f0;
 
-  --color-paper-50: #fdfbf7;
-  --color-paper-100: #f7f3ec;
-  --color-paper-200: #efe9dd;
-  --color-paper-300: #e4dccb;
-
-  --color-brass-300: #e2c79a;
-  --color-brass-400: #c99a54;
-  --color-brass-500: #a97b34;
+  /* "brass" repointed to the brand blue so nothing reads gold pre-sweep */
+  --color-brass-300: #74a8d8;
+  --color-brass-400: #2f7cbf;
+  --color-brass-500: #0160aa;
+  --color-brass-600: #01508d;
 
   --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
   --font-label: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
@@ -56,16 +60,16 @@
   --surface: var(--color-paper-100);
   --surface-raised: #ffffff;
   --surface-sunken: var(--color-paper-200);
-  --fg: #37312a;
-  --fg-strong: #1c1813;
-  --fg-muted: #7a7064;
-  --hairline: color-mix(in oklab, #1c1813 12%, transparent);
-  --hairline-strong: color-mix(in oklab, #1c1813 26%, transparent);
-  --accent: var(--color-firozi-700);
-  --accent-soft: color-mix(in oklab, var(--color-firozi-600) 9%, transparent);
+  --fg: #35404c;
+  --fg-strong: #0b1a2b;
+  --fg-muted: #64748b;
+  --hairline: color-mix(in oklab, #0b1a2b 12%, transparent);
+  --hairline-strong: color-mix(in oklab, #0b1a2b 24%, transparent);
+  --accent: var(--color-firozi-500);
+  --accent-soft: color-mix(in oklab, var(--color-firozi-500) 10%, transparent);
   --shadow-card:
-    0 1px 2px -1px color-mix(in oklab, #1c1813 22%, transparent),
-    0 30px 60px -38px color-mix(in oklab, #1c1813 38%, transparent);
+    0 1px 2px -1px color-mix(in oklab, #0b1a2b 16%, transparent),
+    0 30px 60px -38px color-mix(in oklab, #0b1a2b 26%, transparent);
 }
 
 
@@ -73,16 +77,16 @@
   --surface: var(--color-paper-200);
   --surface-raised: #ffffff;
   --surface-sunken: var(--color-paper-300);
-  --fg: #37312a;
-  --fg-strong: #1c1813;
-  --fg-muted: #7a7064;
-  --hairline: color-mix(in oklab, #1c1813 11%, transparent);
-  --hairline-strong: color-mix(in oklab, #1c1813 24%, transparent);
-  --accent: var(--color-firozi-700);
-  --accent-soft: color-mix(in oklab, var(--color-firozi-600) 9%, transparent);
+  --fg: #35404c;
+  --fg-strong: #0b1a2b;
+  --fg-muted: #64748b;
+  --hairline: color-mix(in oklab, #0b1a2b 11%, transparent);
+  --hairline-strong: color-mix(in oklab, #0b1a2b 22%, transparent);
+  --accent: var(--color-firozi-500);
+  --accent-soft: color-mix(in oklab, var(--color-firozi-500) 10%, transparent);
   --shadow-card:
-    0 1px 2px -1px color-mix(in oklab, #1c1813 20%, transparent),
-    0 30px 60px -38px color-mix(in oklab, #1c1813 34%, transparent);
+    0 1px 2px -1px color-mix(in oklab, #0b1a2b 14%, transparent),
+    0 30px 60px -38px color-mix(in oklab, #0b1a2b 24%, transparent);
 }
 
 
@@ -90,15 +94,15 @@
   --surface: var(--color-ink-900);
   --surface-raised: color-mix(in oklab, var(--color-ink-800) 88%, transparent);
   --surface-sunken: var(--color-ink-800);
-  --fg: #e9e2d6;
-  --fg-strong: #fdfbf7;
-  --fg-muted: #a49a89;
-  --hairline: color-mix(in oklab, #fdfbf7 12%, transparent);
-  --hairline-strong: color-mix(in oklab, #fdfbf7 30%, transparent);
-  --accent: var(--color-brass-400);
-  --accent-soft: color-mix(in oklab, var(--color-brass-400) 14%, transparent);
+  --fg: #cdd9e4;
+  --fg-strong: #ffffff;
+  --fg-muted: #8fa3b5;
+  --hairline: color-mix(in oklab, #ffffff 12%, transparent);
+  --hairline-strong: color-mix(in oklab, #ffffff 28%, transparent);
+  --accent: var(--color-firozi-300);
+  --accent-soft: color-mix(in oklab, var(--color-firozi-300) 16%, transparent);
   --shadow-card:
-    inset 0 1px 0 0 color-mix(in oklab, #fdfbf7 7%, transparent),
+    inset 0 1px 0 0 color-mix(in oklab, #ffffff 7%, transparent),
     0 30px 60px -34px rgb(0 0 0 / 0.6);
 }
 
@@ -111,7 +115,7 @@ html {
 
 body {
   background-color: var(--color-paper-100);
-  color: #37312a;
+  color: #35404c;
   font-family: var(--font-sans);
   font-feature-settings: "cv11", "ss01";
   -webkit-font-smoothing: antialiased;
@@ -127,12 +131,12 @@ body {
 }
 
 ::selection {
-  background: var(--color-firozi-700);
-  color: var(--color-paper-50);
+  background: var(--color-firozi-500);
+  color: #ffffff;
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-firozi-700);
+  outline: 2px solid var(--color-firozi-500);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -144,12 +148,12 @@ body {
   background: var(--color-paper-200);
 }
 ::-webkit-scrollbar-thumb {
-  background: color-mix(in oklab, #1c1813 30%, transparent);
+  background: color-mix(in oklab, #0b1a2b 28%, transparent);
   border-radius: 999px;
   border: 3px solid var(--color-paper-200);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: color-mix(in oklab, #1c1813 45%, transparent);
+  background: color-mix(in oklab, #0b1a2b 44%, transparent);
 }
 
 
@@ -238,8 +242,7 @@ html.intro-active body {
   background-image: linear-gradient(
     100deg,
     var(--fg-strong) 0%,
-    var(--color-firozi-700) 70%,
-    var(--color-brass-500) 120%
+    var(--color-firozi-500) 120%
   );
   background-clip: text;
   color: transparent;
@@ -248,7 +251,7 @@ html.intro-active body {
 @utility glow {
   box-shadow:
     0 0 0 1px var(--hairline),
-    0 40px 90px -32px color-mix(in oklab, #1c1813 45%, transparent);
+    0 40px 90px -32px color-mix(in oklab, #0b1a2b 32%, transparent);
 }
 
 @utility grid-bg {

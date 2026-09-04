@@ -10,7 +10,7 @@ import CTASection from '../components/CTASection'
 export const metadata = {
   title: 'About Us',
   description:
-    'Creation Publicity Pvt. Ltd. has been planning and executing advertising campaigns across India since 1999 — outdoor, transit, retail, print and digital.',
+    'Creation Publicity Pvt. Ltd. has been planning and executing advertising campaigns across India since 1999 outdoor, transit, retail, print and digital.',
   alternates: { canonical: '/about-us' },
 }
 
@@ -49,7 +49,7 @@ const values = [
   },
   {
     title: 'Recommend what we would buy',
-    body: 'If a site will not deliver for your category, we say so — even when it is inventory we hold.',
+    body: 'If a site will not deliver for your category, we say so  even when it is inventory we hold.',
   },
   {
     title: 'Show the evidence',
@@ -63,7 +63,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About Us"
         title="An advertising agency built on follow-through"
-        intro="We started in 1999 as a two-person outdoor media desk in Mumbai. Twenty-five years later we plan and execute campaigns in more than 120 cities — and the reason clients stay is unchanged: what we promise is what goes up."
+        intro="We started in 1999 as a two-person outdoor media desk in Mumbai. Twenty-five years later we plan and execute campaigns in more than 120 cities and the reason clients stay is unchanged: what we promise is what goes up."
       />
 
       <Section tone="light" className="py-20 sm:py-28">
@@ -76,7 +76,7 @@ export default function AboutPage() {
                 chosen site, mounted late and lit unevenly, is money burnt.
               </p>
               <p>
-                So we built the agency backwards — starting with the operational spine. Site surveys,
+                So we built the agency backwards  starting with the operational spine. Site surveys,
                 municipal permissions, fabrication partners, mounting crews, monitoring photography.
                 Only once that machinery was reliable did we expand into malls and multiplexes, transit
                 networks, retail rollouts and, most recently, digital performance marketing.
@@ -123,7 +123,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section tone="dark" className="surface relative overflow-hidden py-24 sm:py-32">
+      <Section  className="surface relative overflow-hidden bg-[#0160AA] py-24 sm:py-32">
         <div className="grid-bg absolute inset-0 opacity-25" aria-hidden="true" />
         <div className="container-x relative">
           <SectionHeading
@@ -140,7 +140,7 @@ export default function AboutPage() {
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <h3 className="font-display mt-4 text-h3 font-medium text-strong">{value.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{value.body}</p>
+                <p className="mt-3 text-sm leading-relaxed text-slate-50">{value.body}</p>
               </div>
             ))}
           </Reveal>
@@ -179,7 +179,7 @@ export default function AboutPage() {
 
       <CTASection
         title="Let's talk about your next campaign"
-        body="Whether it is a single hoarding or a national rollout, the conversation starts the same way — what are you launching, where, and by when?"
+        body="Whether it is a single hoarding or a national rollout, the conversation starts the same way  what are you launching, where, and by when?"
       />
     </>
   )

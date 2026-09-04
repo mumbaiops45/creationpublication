@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Logo({ compact = false }) {
   return (
-    <Link href="/" className="group flex items-center gap-3" aria-label="Creation Publicity — home">
+    <Link href="/" className="group flex items-center gap-3" aria-label="Creation Publicity home">
       <span className="relative flex size-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-firozi-500 to-firozi-800 font-label text-base font-bold text-paper-50 shadow-sm transition group-hover:from-firozi-400 group-hover:to-firozi-700">
         CP
       </span>

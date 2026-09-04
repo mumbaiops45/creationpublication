@@ -4,11 +4,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-/**
- * Scroll-linked translate for layering depth. `speed` is the fraction of a
- * ~240px travel range: positive drifts the element up as you scroll (slower
- * than the page), negative pushes it down (faster). Keep it subtle (0.05–0.25).
- */
+
 export default function Parallax({
   children,
   className = '',
