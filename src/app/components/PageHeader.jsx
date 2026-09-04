@@ -11,78 +11,25 @@ export default function PageHeader({ eyebrow, title, intro }) {
       <div className="pointer-events-none absolute left-1/2 top-[42%] h-[24rem] w-[24rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300/10 blur-[110px] sm:h-[32rem] sm:w-[32rem] lg:h-[40rem] lg:w-[40rem]"
         aria-hidden="true"
       />
-      <div className="
-          pointer-events-none absolute
-          -right-32 -top-32
-          h-[24rem] w-[24rem]
-          rounded-full
-          bg-white/[0.06]
-          blur-[100px]
-          sm:-right-48 sm:-top-48
-          sm:h-[34rem] sm:w-[34rem]
-        "
+      <div className="pointer-events-none absolute -right-32 -top-32 h-[24rem] w-[24rem] rounded-full bg-white/[0.06] blur-[100px] sm:-right-48 sm:-top-48 sm:h-[34rem] sm:w-[34rem]"
         aria-hidden="true"
       />
 
-      {/* Bottom-left glow */}
-      <div
-        className="
-          pointer-events-none absolute
-          -bottom-40 -left-40
-          h-[24rem] w-[24rem]
-          rounded-full
-          bg-[#003F73]/30
-          blur-[100px]
-          sm:h-[32rem] sm:w-[32rem]
-        "
+      <div className="pointer-events-none absolute -bottom-40 -left-40 h-[24rem] w-[24rem] rounded-full bg-[#003F73]/30 blur-[100px] sm:h-[32rem] sm:w-[32rem]"
+        aria-hidden="true"/>
+      <div className="pointer-events-none absolute inset-0 opacity-[0.055] [background-image: linear-gradient(rgba(255,255,255,0.7)_1px,transparent_1px), linear-gradient(90deg,rgba(255,255,255,0.7)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:linear-gradient(to_bottom,black_0%,black_45%,transparent_100%)]"
         aria-hidden="true"
       />
-
-      {/* Subtle grid */}
-      <div
-        className="
-          pointer-events-none absolute inset-0
-          opacity-[0.055]
-          [background-image:
-            linear-gradient(rgba(255,255,255,0.7)_1px,transparent_1px),
-            linear-gradient(90deg,rgba(255,255,255,0.7)_1px,transparent_1px)
-          ]
-          [background-size:56px_56px]
-          [mask-image:linear-gradient(to_bottom,black_0%,black_45%,transparent_100%)]
-        "
+      <div className="pointer-events-none absolute left-1/2 top-0 h-px w-[75%] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/40 to-transparent"
         aria-hidden="true"
       />
-
-      {/* Soft top highlight */}
-      <div
-        className="
-          pointer-events-none absolute
-          left-1/2 top-0
-          h-px w-[75%]
-          -translate-x-1/2
-          bg-gradient-to-r
-          from-transparent
-          via-white/40
-          to-transparent
-        "
-        aria-hidden="true"
-      />
-
-      {/* Main content */}
       <div className="container-x relative z-10">
         <div className="max-w-6xl">
-          {/* Eyebrow */}
           {eyebrow && (
             <Reveal>
               <div className="mb-6 flex items-center gap-3 sm:mb-8">
                 <span className="h-px w-7 bg-white/50 sm:w-10" />
-
-                <span
-                  className="
-                    text-[10px] font-medium
-                    uppercase tracking-[0.22em]
-                    text-white/65
-                    sm:text-xs
+                <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-white/65 sm:text-xs
                     sm:tracking-[0.25em]
                   "
                 >
@@ -104,8 +51,7 @@ export default function PageHeader({ eyebrow, title, intro }) {
               tracking-[-0.045em]
               text-white
               sm:text-5xl
-              md:text-7xl
-              xl:text-[6.5rem]
+              md:text-6xl
             "
           >
             {title}
