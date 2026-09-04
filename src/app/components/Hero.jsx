@@ -96,17 +96,9 @@ export default function Hero() {
             {site.tagline} · Since 1999
           </span>
 
-          <h1 className="mt-7 font-display text-hero font-medium text-strong">
-            <span data-hero-line className="line-mask">
-              <span className="block">Creation</span>
-            </span>
-            <span data-hero-line className="line-mask">
-              <span className="block text-firozi-700 italic">Publicity</span>
-            </span>
-            <span data-hero-line className="line-mask">
-                <span className="block font-label text-xl font-semibold tracking-[0.28em] text-firozi-700 uppercase sm:text-2xl lg:text-3xl">
-                Pvt. Ltd.
-              </span>
+          <h1 className="mt-7 font-display text-5xl font-medium text-strong">
+            <span data-hero-line >
+              <span className="block">Creation Publicity Pvt. Ltd.</span>
             </span>
           </h1>
 
