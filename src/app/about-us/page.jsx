@@ -174,16 +174,6 @@ export default function AboutPage() {
               </div>
             ))}
           </Reveal>
-
-          <Reveal className="mt-10" delay={0.2}>
-            <p className="text-xs text-muted">
-              Replace these placeholders with real names, photographs and bios in{' '}
-              <code className="card-sunken rounded px-1.5 py-0.5 text-accent">
-                src/app/about-us/page.jsx
-              </code>
-              .
-            </p>
-          </Reveal>
         </div>
       </Section>
 

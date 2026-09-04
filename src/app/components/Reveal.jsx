@@ -16,6 +16,8 @@ export default function Reveal({
   delay = 0,
   stagger = 0,
   start = 'top 82%',
+  end = 'top 32%',
+  scrub = false,
   once = true,
   ...rest
 }) {
@@ -48,18 +50,20 @@ export default function Reveal({
           x: 0,
           scale: 1,
           filter: 'blur(0px)',
-          duration,
-          delay,
+          duration: scrub ? undefined : duration,
+          delay: scrub ? 0 : delay,
           stagger,
-          ease: 'power3.out',
-          clearProps: 'filter',
-          scrollTrigger: { trigger: el, start, once },
+          ease: scrub ? 'none' : 'power3.out',
+          clearProps: scrub ? undefined : 'filter',
+          scrollTrigger: scrub
+            ? { trigger: el, start, end, scrub: true }
+            : { trigger: el, start, once },
         },
       )
     }, el)
 
     return () => ctx.revert()
-  }, [isGroup, y, x, scale, blur, duration, delay, stagger, start, once])
+  }, [isGroup, y, x, scale, blur, duration, delay, stagger, start, end, scrub, once])
 
   const marker = isGroup ? { 'data-reveal-group': '' } : { 'data-reveal': '' }
 

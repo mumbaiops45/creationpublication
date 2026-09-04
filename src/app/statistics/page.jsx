@@ -5,7 +5,9 @@ import SectionHeading from '../components/SectionHeading'
 import Counter from '../components/Counter'
 import Reveal from '../components/Reveal'
 import RevealImage from '../components/RevealImage'
-import Meter from '../components/Meter'
+import StatMeter from '../components/StatMeter'
+import LineDraw from '../components/LineDraw'
+import Parallax from '../components/Parallax'
 import CTASection from '../components/CTASection'
 
 export const metadata = {
@@ -27,10 +29,18 @@ export default function StatisticsPage() {
       />
       <Section tone="light" className="py-20 sm:py-28">
         <div className="container-x">
-          <Reveal stagger={0.08} className="grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {stats.map((stat) => (
-              <div key={stat.label} className="border-t border-hairline pt-6">
-                <p className="font-display text-5xl font-medium text-strong sm:text-6xl">
+          <Reveal
+            stagger={0.09}
+            y={44}
+            className="grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {stats.map((stat, i) => (
+              <div
+                key={stat.label}
+                className="group relative pt-6 transition-transform duration-500 ease-out hover:-translate-y-1"
+              >
+                <LineDraw className="absolute inset-x-0 top-0" start="top 88%" delay={(i % 3) * 0.08} />
+                <p className="font-display text-5xl font-medium tracking-tight text-strong sm:text-6xl">
                   <Counter value={stat.value} suffix={stat.suffix} />
                 </p>
                 <p className="font-display mt-4 text-h3 font-medium text-strong">
@@ -43,7 +53,9 @@ export default function StatisticsPage() {
         </div>
       </Section>
       <Section tone="tint" className="relative overflow-hidden border-hairline border-y py-24">
-        <div className="grid-bg absolute inset-0 opacity-40" aria-hidden="true" />
+        <Parallax speed={0.1} className="absolute inset-0" aria-hidden="true">
+          <div className="grid-bg h-full w-full opacity-40" />
+        </Parallax>
         <div className="container-x relative grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-20">
           <div className="lg:col-span-5">
             <SectionHeading
@@ -56,13 +68,11 @@ export default function StatisticsPage() {
 
           <Reveal stagger={0.1} className="space-y-8 lg:col-span-7 lg:pt-3">
             {capabilities.map((capability) => (
-              <div key={capability.label}>
-                <div className="flex items-baseline justify-between">
-                  <span className="text-sm font-medium text-strong">{capability.label}</span>
-                  <span className="font-display text-sm font-medium text-accent">{capability.value}%</span>
-                </div>
-                <Meter value={capability.value} className="mt-3" />
-              </div>
+              <StatMeter
+                key={capability.label}
+                label={capability.label}
+                value={capability.value}
+              />
             ))}
           </Reveal>
         </div>
@@ -86,7 +96,7 @@ export default function StatisticsPage() {
               />
             </Reveal>
 
-            <Reveal stagger={0.09} className="lg:col-span-7">
+            <Reveal stagger={0.12} y={48} className="lg:col-span-7">
               {milestones.map((milestone, index) => (
                 <div key={milestone.year} className="relative flex gap-6 pb-10 last:pb-0 sm:gap-8">
                   <div className="flex flex-col items-center">
@@ -94,14 +104,12 @@ export default function StatisticsPage() {
                       {milestone.year}
                     </span>
                     {index < milestones.length - 1 && (
-                      <span
-                        className="mt-2 w-px grow bg-linear-to-b from-ink-900/20 to-transparent"
-                        aria-hidden="true"
-                      />
+                      <LineDraw axis="y" scrub className="mt-2 grow" />
                     )}
                   </div>
 
-                  <div className="border-t border-hairline pt-3 pb-1">
+                  <div className="pt-3 pb-1">
+                    <LineDraw className="mb-3" start="top 86%" />
                     <h3 className="font-display text-h3 font-medium text-strong">{milestone.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted">{milestone.body}</p>
                   </div>

@@ -6,6 +6,7 @@ import SplitLines from './SplitLines'
 import Section from './Section'
 import Magnetic from './Magnetic'
 
+
 export default function CTASection({
   title = 'Ready to put your brand in front of the right audience?',
   body = 'Tell us your city, your budget and your timeline. We will come back with a media plan and costing within one business day.',
@@ -17,10 +18,9 @@ export default function CTASection({
         aria-hidden="true"
       />
       <div className="grid-bg pointer-events-none absolute inset-0 opacity-30" aria-hidden="true" />
-
       <div className="container-x relative text-center">
-        <SplitLines
-          as="h2"
+        <SplitLines 
+          as="h2" 
           className="mx-auto max-w-3xl font-display text-h2 leading-tight font-medium text-balance text-strong"
         >
           {title}
