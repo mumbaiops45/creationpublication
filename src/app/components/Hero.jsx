@@ -124,7 +124,7 @@ export default function Hero() {
               <Link
                 data-hero-cta
                 href="/contact"
-                className="group inline-flex items-center gap-3 rounded-full bg-ink-900 px-8 py-4 text-sm font-semibold text-paper-50 transition-colors hover:bg-ink-800"
+                className="group inline-flex items-center gap-3 rounded-full bg-ink-700 px-8 py-4 text-sm font-semibold text-paper-50 transition-colors hover:bg-ink-800"
               >
                 Enquire Now
                 <ArrowIcon className="size-4 transition-transform group-hover:translate-x-1" />
@@ -134,16 +134,16 @@ export default function Hero() {
             <Link
               data-hero-cta
               href="/services"
-              className="group inline-flex items-center gap-2.5 text-sm font-semibold text-strong"
+              className="group inline-flex items-center gap-3 rounded-full bg-ink-700 px-8 py-4 text-sm font-semibold text-paper-50 transition-colors hover:bg-ink-800"
             >
               <span className="border-b border-ink-900/30 pb-0.5 transition-colors group-hover:border-firozi-700">
                 Explore Our Services
               </span>
-              <ArrowIcon className="size-4 text-accent transition-transform group-hover:translate-x-1" />
+              <ArrowIcon className="size-4 text-white transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 
-          <dl className="mt-14 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
+          {/* <dl className="mt-14 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
             {stats.slice(0, 4).map((stat) => (
               <div data-hero-stat key={stat.label} className="border-t border-hairline pt-3">
                 <dt className="font-display text-2xl font-medium text-strong sm:text-[1.7rem]">
@@ -153,7 +153,7 @@ export default function Hero() {
                 <dd className="mt-1 text-xs leading-snug text-muted">{stat.label}</dd>
               </div>
             ))}
-          </dl>
+          </dl> */}
         </div>
       </div>
 

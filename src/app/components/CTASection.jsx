@@ -11,7 +11,7 @@ export default function CTASection({
   body = 'Tell us your city, your budget and your timeline. We will come back with a media plan and costing within one business day.',
 }) {
   return (
-    <Section tone="dark" className="surface relative overflow-hidden py-24 sm:py-32">
+    <Section  className="surface relative bg-[#F8FEFF] overflow-hidden py-24 sm:py-32">
       <div
         className="pointer-events-none absolute -top-40 left-1/2 size-[36rem] -translate-x-1/2 rounded-full bg-brass-400/8 blur-[130px]"
         aria-hidden="true"

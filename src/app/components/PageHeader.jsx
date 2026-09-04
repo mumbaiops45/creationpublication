@@ -8,8 +8,8 @@ export default function PageHeader({ eyebrow, title, intro }) {
       tone="light"
       className="surface relative overflow-hidden bg-[#F8FEFF] pt-40 pb-16 sm:pt-48 sm:pb-24"
     >
-      <div
-        className="pointer-events-none absolute -top-32 right-[-10%] size-[34rem] rounded-full bg-firozi-600/5 blur-[120px]"
+      <div 
+         className="pointer-events-none absolute -top-32 right-[-10%] size-[34rem] rounded-full bg-firozi-600/5 blur-[120px]"
         aria-hidden="true"
       />
 
