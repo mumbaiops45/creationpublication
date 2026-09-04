@@ -45,13 +45,13 @@ export default function Home() {
                     <ClientMarquee />
                 </div>
             </Section>
-            <Section tone="light" id="services" className="py-24 sm:py-32">
+            <Section tone="light" id="services" className="py-18 sm:py-22">
                 <div className="container-x">
                     <SectionHeading
                         align="left"
                         eyebrow="What We Do"
                         title="Advertising that works where people already are"
-                        intro="Nine specialisations under one roof. Every service has its own page and its own enquiry form, so your brief reaches the right desk straight away."
+                        intro={ <span className='text-slate-950'>Nine specialisations under one roof. Every service has its own page and its own enquiry form, so your brief reaches the right desk straight away.</span> }
                     />
 
                     <div className="mt-16 grid grid-cols-1 gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
@@ -62,18 +62,22 @@ export default function Home() {
                 </div>
             </Section>
             <Section tone="dark" className="surface relative overflow-hidden py-24 sm:py-32">
-                <div className="grid-bg absolute inset-0 opacity-30" aria-hidden="true" />
                 <div
                     className="absolute top-1/2 left-1/2 size-[46rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brass-400/6 blur-[130px]"
                     aria-hidden="true"
                 />
-                <div className="container-x relative">
+                <div className="container-x  relative">
                     <SectionHeading
                         align="left"
                         eyebrow="By The Numbers"
-                        title="Twenty-five years of putting brands outdoors"
+                        title={
+                            <span className="text-white">
+                                Twenty-five years of putting brands outdoors
+                            </span>
+                        }
                         intro="We have been planning and executing campaigns since 1999 long enough to know which sites deliver and which ones only look good on a rate card."
                     />
+
 
                     <Reveal
                         stagger={0.08}
@@ -98,7 +102,9 @@ export default function Home() {
                             align="left"
                             eyebrow="Why Creation Publicity"
                             title="The unglamorous parts, done properly"
-                            intro="Creative is the easy half. What separates a campaign that goes live on time from one that does not is permissions, logistics and follow-through."
+                            intro={ <span className='text-slate-800'>
+                                     Creative is the easy half. What separates a campaign that goes live on time from one that does not is permissions, logistics and follow-through.
+                            </span> }
                         />
 
                         <Reveal className="mt-12">
@@ -131,7 +137,9 @@ export default function Home() {
                     <SectionHeading
                         eyebrow="Client Voices"
                         title="What our clients say"
-                        intro="A few words from the marketing teams we work with every quarter."
+                        intro={ <span className='text-slate-800'>
+                             A few words from the marketing teams we work with every quarter.
+                        </span>}
                     />
                     <div className="mt-16">
                         <Testimonials />
@@ -144,7 +152,11 @@ export default function Home() {
                         align="left"
                         eyebrow="Case Studies"
                         title="Campaigns we are happy to talk about"
-                        intro="Real briefs, real constraints, real numbers written up in full so you can judge the work rather than the pitch."
+                        intro={ 
+                            <span className='text-slate-800'>
+                              Real briefs, real constraints, real numbers written up in full so you can judge the work rather than the pitch.
+                            </span>
+                            }
                     />
 
                     <div className="mt-8">

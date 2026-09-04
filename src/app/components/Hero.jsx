@@ -96,7 +96,7 @@ export default function Hero() {
             {site.tagline} · Since 1999
           </span>
 
-          <h1 className="mt-7 font-display text-5xl font-medium text-strong">
+          <h1 className="mt-7 font-display text-6xl font-medium text-strong">
             <span data-hero-line >
               <span className="block">Creation Publicity Pvt. Ltd.</span>
             </span>

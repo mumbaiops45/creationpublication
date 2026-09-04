@@ -23,7 +23,7 @@ export default function BlogPage() {
         intro="What the brief was, what got in the way, and what the campaign actually delivered. No vanity metrics."
       />
 
-      <Section tone="light" className="py-16 sm:py-24">
+      <Section tone="light" className="py-6 sm:py-24">
         <div className="container-x">
           {posts.map((post, index) => (
             <EditorialRow

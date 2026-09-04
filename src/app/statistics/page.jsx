@@ -62,7 +62,9 @@ export default function StatisticsPage() {
               align="left"
               eyebrow="Capability"
               title="Where our depth is"
-              intro="Share of our annual delivery volume, by discipline. Outdoor and print remain our backbone; digital is the fastest-growing arm."
+              intro={<span className='text-slate-800'>
+                 Share of our annual delivery volume, by discipline. Outdoor and print remain our backbone; digital is the fastest-growing arm.
+              </span> }
             />
           </div>
 
@@ -84,7 +86,7 @@ export default function StatisticsPage() {
             align="left"
             eyebrow="Our Journey"
             title="From one desk to 120 cities"
-            intro="The moments that changed what we could offer."
+            intro={ <span className='text-slate-800'> The moments that changed what we could offer. </span>}
           />
 
           <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
