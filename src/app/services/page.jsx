@@ -1,7 +1,7 @@
 import { services } from '@/content/services'
 import PageHeader from '../components/PageHeader'
 import Section from '../components/Section'
-import ServiceCard from '../components/ServiceCard'
+import ServiceCa from '../components/ServiceCa'
 import CTASection from '../components/CTASection'
 
 export const metadata = {
@@ -26,7 +26,7 @@ export default function ServicesPage() {
         <div className="container-x">
           <div className="grid grid-cols-1 gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
-              <ServiceCard key={service.slug} service={service} index={index} />
+              <ServiceCa key={service.slug} service={service} index={index} />
             ))}
           </div>
         </div>

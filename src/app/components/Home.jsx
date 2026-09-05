@@ -54,13 +54,22 @@ export default function Home() {
                         intro={ <span className='text-slate-950'>Nine specialisations under one roof. Every service has its own page and its own enquiry form, so your brief reaches the right desk straight away.</span> }
                     />
 
-                    <div className="mt-16 grid grid-cols-1 gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="mt-16 ">
                         {services.map((service, index) => (
+                            <div 
+                            key={service.slug}
+                            className='sticky top-6 mb-0'
+                            style={{
+                                zIndex: index + 1,
+                            }}
+                            >
                             <ServiceCard key={service.slug} service={service} index={index} />
+                            </div>
                         ))}
                     </div>
                 </div>
             </Section>
+
             <Section tone="dark" className="surface relative overflow-hidden py-24 sm:py-32">
                 <div
                     className="absolute top-1/2 left-1/2 size-[46rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brass-400/6 blur-[130px]"
