@@ -141,9 +141,8 @@ export default async function PostPage({ params }) {
         </article>
       </Section>
 
-      {/* More case studies */}
       {others.length > 0 && (
-        <Section tone="tint" className="border-hairline border-t py-20 sm:py-24">
+        <Section tone="tint" className="border-hairline border-t py-20 sm:py-18">
           <div className="container-x">
             <Reveal className="mx-auto max-w-2xl">
               <h2 className="font-display text-h2 font-medium text-strong">More case studies</h2>
@@ -186,7 +185,6 @@ export default async function PostPage({ params }) {
           </div>
         </Section>
       )}
-
       <CTASection />
     </>
   )

@@ -20,10 +20,10 @@ export default function ClientMarquee() {
                 src={client.logo}
                 alt={client.name}
                 width={150}
-                height={56}
+                height={26}
                 loading="lazy"
                 decoding="async"
-                className="h-9 w-auto object-contain mix-blend-multiply"
+                className="h-15 w-auto object-contain mix-blend-multiply"
               />
             ) : (
               <span className="font-display text-xl font-medium tracking-tight whitespace-nowrap text-fg">

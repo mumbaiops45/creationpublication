@@ -146,7 +146,7 @@ export default function Home() {
                     </div>
                 </div>
             </Section>
-            <Section tone="light" className="py-24 sm:py-32">
+            <Section tone="light" className="py-18 sm:py-18">
                 <div className="container-x">
                     <SectionHeading
                         align="left"
@@ -159,7 +159,7 @@ export default function Home() {
                             }
                     />
 
-                    <div className="mt-8">
+                    <div className="mt-6">
                         {posts.map((post, index) => (
                             <EditorialRow
                                 key={post.slug}

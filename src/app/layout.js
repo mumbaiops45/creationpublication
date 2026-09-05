@@ -1,4 +1,4 @@
-import { Inter, Sora, Fraunces } from 'next/font/google'
+import { Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import { site } from '@/content/site'
 import Navbar from './components/Navbar'
@@ -8,25 +8,10 @@ import SmoothScroll from './components/SmoothScroll'
 import ScrollProgress from './components/ScrollProgress'
 import PageLoader from './components/PageLoader'
 
-const sora = Sora({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-sora',
-  display: 'swap',
-})
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
-
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  style: ['normal', 'italic'],
-  axes: ['opsz'],
-  variable: '--font-fraunces',
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-jakarta',
   display: 'swap',
 })
 
@@ -100,7 +85,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en-IN"
-      className={`${fraunces.variable} ${sora.variable} ${inter.variable}`}
+      className={plusJakartaSans.variable}
       suppressHydrationWarning
     >
       <head>

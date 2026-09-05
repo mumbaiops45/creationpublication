@@ -2,8 +2,6 @@
 
 
 @theme {
-  /* Brand blue #0160AA — the site's single accent. (var name still "firozi"
-     for now; a later pass renames these tokens to --color-brand-*.) */
   --color-firozi-50: #eef4fb;
   --color-firozi-100: #d6e6f4;
   --color-firozi-200: #aecde9;
@@ -15,27 +13,26 @@
   --color-firozi-800: #0a2c49;
   --color-firozi-900: #08223a;
 
-  /* Dark bands — cool navy, not warm black */
   --color-ink-900: #0a2540;
   --color-ink-800: #0e2c49;
   --color-ink-700: #143a5c;
   --color-ink-600: #1f4c74;
 
-  /* Ground — cool near-white, not warm cream */
+
   --color-paper-50: #ffffff;
   --color-paper-100: #f7f9fb;
   --color-paper-200: #eef2f6;
   --color-paper-300: #e2e8f0;
 
-  /* "brass" repointed to the brand blue so nothing reads gold pre-sweep */
+
   --color-brass-300: #74a8d8;
   --color-brass-400: #2f7cbf;
   --color-brass-500: #0160aa;
   --color-brass-600: #01508d;
 
-  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
-  --font-label: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-label: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
 
 
   --text-hero: clamp(3rem, 1.1rem + 7.6vw, 7.5rem);

@@ -12,15 +12,15 @@ export default function CTASection({
   body = 'Tell us your city, your budget and your timeline. We will come back with a media plan and costing within one business day.',
 }) {
   return (
-    <Section  className="surface relative bg-[#0160AA] overflow-hidden py-24 sm:py-32">
+    <Section className="surface relative bg-[#0160AA] overflow-hidden py-18 sm:py-22">
       <div
         className="pointer-events-none absolute -top-40 left-1/2 size-[36rem] -translate-x-1/2 rounded-full bg-brass-400/8 blur-[130px]"
         aria-hidden="true"
       />
       <div className="grid-bg pointer-events-none absolute inset-0 opacity-30" aria-hidden="true" />
       <div className="container-x relative text-center">
-        <SplitLines 
-          as="h2" 
+        <SplitLines
+          as="h2"
           className="mx-auto max-w-3xl font-display text-h2 leading-tight font-medium text-balance text-strong"
         >
           {title}
